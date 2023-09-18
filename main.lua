@@ -232,10 +232,10 @@ function love.update(dt)
     if gameState == 'play' then
         if ball.y > player1.y and ball.y + ball.height < player1.y + player1.height then
             player1.dy = 0
-        elseif player1.y > ball.y + ball.height then
-            player1.dy = -PADDLE_SPEED
         elseif player1.y + player1.height < ball.y then
             player1.dy = PADDLE_SPEED
+        elseif player1.y > ball.y + ball.height then
+            player1.dy = -PADDLE_SPEED
         end
     else
         player1.dy = 0
