@@ -228,12 +228,17 @@ function love.update(dt)
     --
     -- paddles can move no matter what state we're in
     --
+
     -- player 1
     if gameState == 'play' then
+        -- checks if vertical postition of the ball is within same range of paddle
+        -- if condition is true, vertical velocity is set to 0 and paddle stops moving
         if ball.y > player1.y and ball.y + ball.height < player1.y + player1.height then
             player1.dy = 0
+        -- checks if paddle is above ball's position and paddle moves downward towards ball
         elseif player1.y + player1.height < ball.y then
             player1.dy = PADDLE_SPEED
+        -- checks if paddle is below ball's position and moves paddle upward towards ball
         elseif player1.y > ball.y + ball.height then
             player1.dy = -PADDLE_SPEED
         end
