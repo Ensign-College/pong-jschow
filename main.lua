@@ -228,6 +228,7 @@ function love.update(dt)
     --
     -- paddles can move no matter what state we're in
     --
+    -- player 1
     if gameState == 'play' then
         if ball.y > player1.y and ball.y + ball.height < player1.y + player1.height then
             player1.dy = 0
